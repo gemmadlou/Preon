@@ -85,9 +85,9 @@ And that's it. I can either have stock scales, or customised ones for my project
 
 ## What is Functional CSS
 
-It's a very module approach to css. The main benefit for me, is that at some point, I don't have to write any more css. All the rules I need are completely defined. As more and more modules and styles are created by the designer, I simply need to code it in the HTML. That leads to the second benefit, it's easy to reuse styles and tweak them on a case-by-case basis, lending itself to more interesting looking sites that don't have to fit stock components out of fear of BEM-bloat.
+It's an extremely modular approach to css. The main benefit for me, is that at some point, I don't have to write any more css. All the rules I need are completely defined. As more and more modules and styles are created by the designer, I simply need to code it in the HTML. That leads to the second benefit, it's easy to reuse styles and tweak them on a case-by-case basis, lending itself to more interesting looking sites that don't have to fit stock components out of fear of BEM-bloat.
 
-Actually, that last point isn't trivial. Designers are fantastic. They know how to make things look good. However, things aren't always by the rules. Sometimes they have text in a 4/12 width block. A very similar looking module on the same page has 5/12 block. Writing reusable components with modifiers becomes painful. So functional css helps to alleviate this issue so we can be more flexible.
+Actually, that last point isn't trivial. Designers are fantastic. They know how to make things look good. However, things aren't always by the rules. Sometimes they have text in a 4/12 width block left aligned. A very similar looking module on the same page has 5/12 block. Writing reusable components with modifiers becomes painful when they deviate from rules we developers try to apply to prevent the css from going wild. So functional css helps be more flexible and align ourselves with designers closely.
 
 ## Clap backs
 
