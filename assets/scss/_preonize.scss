@@ -1,0 +1,46 @@
+@mixin preonize($name, $prop, $map, $breakpoints) {
+
+    @each $label, $value in $map {
+        .#{$name}#{$label} {
+            #{$prop}: $value;
+        }
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media #{$breakpoint-value} {
+            @each $label, $value in $map {
+                .#{$name}#{$label}-#{$breakpoint} {
+                    #{$prop}: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin preonize-hover($name, $prop, $map, $breakpoints) {
+
+    @each $label, $value in $map {
+        .#{$name}#{$label}:hover {
+            #{$prop}: $value;
+        }
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media #{$breakpoint-value} {
+            @each $label, $value in $map {
+                .#{$name}#{$label}-#{$breakpoint}:hover {
+                    #{$prop}: $value;
+                }
+            }
+        }
+    }
+}
+
+@function map-collect($maps...) {
+    $collection: ();
+  
+    @each $map in $maps {
+      $collection: map-merge($collection, $map);
+    }
+    @return $collection;
+}

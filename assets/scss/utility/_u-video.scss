@@ -1,0 +1,14 @@
+.u-video {
+    height: 0;
+    padding-bottom: (9/16 * 100%);
+    position: relative;
+    width: 100%;
+
+    &__inner {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

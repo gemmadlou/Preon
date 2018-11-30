@@ -1,0 +1,39 @@
+$text: (
+    'u': uppercase,
+    'c': capitalize
+);
+
+$alignment: (
+    '-center': center,
+    '-right': right,
+    '-left': left
+);
+
+$weight: (
+    'b': 700
+);
+
+$decoration: (
+    'x': none,
+    'u': underline
+);
+
+$letter-spacing: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px
+);
+
+$font-size: (
+    1: 1.3rem,
+    2: 1.6rem,
+    3: 2.0rem,
+    4: 2.4rem,
+    5: 2.7rem,
+    6: 3.2rem,
+    7: 3.8rem,
+    8: 4.8rem,
+    9: 6.4rem,
+    10: 7.6rem
+);
