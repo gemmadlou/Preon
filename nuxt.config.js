@@ -15,6 +15,10 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
+      {
+        href: 'https://fonts.googleapis.com/css?family=Heebo:100,400,500,700,800',
+        rel: 'stylesheet'
+      }
     ]
   },
 

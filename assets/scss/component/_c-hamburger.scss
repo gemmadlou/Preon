@@ -1,16 +1,21 @@
 @import "../preon/config/color";
 
 .c-hamburger {
-    width: 3.8rem;
+    $hamburger-height: .3rem;
+    $hamburger-width: 2.5rem;
+    $hamburger-gap: .5rem;
+
+    cursor: pointer;
+    width: $hamburger-width;
 
     &__line {
-        background-color: map-get($colors, 'grey');
+        background-color: map-get($colors, 'blue');
         display: block;
-        height: .5rem;
+        height: $hamburger-height;
         width: 100%;
     }
 
     &__line + &__line {
-        margin-top: 1rem;
+        margin-top: $hamburger-gap;
     }
 }

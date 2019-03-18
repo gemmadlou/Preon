@@ -36,6 +36,48 @@
     }
 }
 
+@mixin preonize-after($name, $prop, $map, $breakpoints) {
+
+    @each $label, $value in $map {
+        .#{$name}#{$label}:after {
+            content: '';
+            #{$prop}: $value;
+        }
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media #{$breakpoint-value} {
+            @each $label, $value in $map {
+                .#{$name}#{$label}-#{$breakpoint}:after {
+                    content: '';
+                    #{$prop}: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin preonize-before($name, $prop, $map, $breakpoints) {
+
+    @each $label, $value in $map {
+        .#{$name}#{$label}:before {
+            content: '';
+            #{$prop}: $value;
+        }
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media #{$breakpoint-value} {
+            @each $label, $value in $map {
+                .#{$name}#{$label}-#{$breakpoint}:before {
+                    content: '';
+                    #{$prop}: $value;
+                }
+            }
+        }
+    }
+}
+
 @function map-collect($maps...) {
     $collection: ();
   
