@@ -18,6 +18,10 @@ module.exports = {
       {
         href: 'https://fonts.googleapis.com/css?family=Heebo:100,400,500,700,800',
         rel: 'stylesheet'
+      },
+      {
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css',
+        rel: 'stylesheet'
       }
     ]
   },
@@ -39,7 +43,8 @@ module.exports = {
   */
   plugins: [
     '@/assets/scss/style.scss',
-    '~/plugins/youtube.js'
+    '~/plugins/youtube.js',
+    '~/plugins/syntax-highlighting.js'
   ],
 
   /*
