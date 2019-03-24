@@ -33,14 +33,18 @@
         </ul>
       </nav>
     </header>
-    <section class="page pa2 s-page w-70-m ml-30-m ml-20-l maxw-xxxsuper-l">
+    <section class="page pa2 s-page w-70-m ml-30-m ml-30-l w-60-l maxw-xxxsuper-l pt6 pb6">
       <h1>Preon</h1>
+      <hr>
       <h2 id="summary">Summary</h2>
       <p>
-        Preon was created after stumbling over functional css and the wonderful Tachyons
-        For a little extra flexibility, customisation and a Sass flavour, Preon was created
-        to make managing css projects a little easier.
+        Preon is a functional css library. It was created after 
+        stumbling over functional css and the wonderful Tachyons.
+        For a little extra customisation and a Sass flavour, Preon was born
+        to make managing functional css projects a little easier.
       </p>
+      <h2 id="get-started">How does it work</h2>
+      <p>TBC</p>
       <h2 id="get-started">Get started</h2>
       <p>TBC</p>
       <p v-if="1==2">
@@ -53,7 +57,10 @@
         It's an extremely modular approach to css. The main benefit for me, is that at some point, 
         I don't have to write any more css. All the rules I need are completely defined. 
         As more and more modules and styles are created by the designer, I simply 
-        need to code it in the HTML. That leads to the second benefit, it's easy 
+        need to code it in the HTML.
+      </p>
+      <p>
+        That leads to the second benefit, it's easy 
         to reuse styles and tweak them on a case-by-case basis, lending itself to more 
         interesting looking sites that don't have to fit stock components out of fear of BEM-bloat.
       </p>
@@ -66,6 +73,14 @@
           from rules we developers try to apply to prevent the css from going wild. 
           So functional css helps be more flexible and align ourselves with designers closely.
       </p>
+      <h2 id="API Reference">API Reference</h2>
+      <h3 id="api-colors">Colors</h3>
+      <table>
+        <tr>
+          <td>.grey</td>
+          <td><span class="highlight">color: #f1f5f1</span></td>
+        </tr>
+      </table>
     </section>
     <footer v-bind:class="[footerOpen ? 'h-100' : '', 'relative fixed bg-white bwt1 bwt0-m bg-grey-m bc-grey-m bs-solid grey-dark b0 l0 w-100 h-100-m t5-m w-30-m w-20-l pt2-m']">
       <div 
@@ -118,19 +133,29 @@ export default {
 <style lang="scss">
 
 .s-page {
-  line-height: 2.2rem;
+  line-height: 2.7rem;
+  font-size: 1.8rem;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: map-get($colors, 'grey');
+    margin-bottom: 2rem;
+  }
 
   h1 {
     font-size: 3rem;
     margin-bottom: 3rem;
   }
   h2 {
+    letter-spacing: .1ch;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 2rem;
   }
   h3 {
     margin-bottom: 2rem;
+    font-weight: bold;
   }
   p {
     margin-bottom: 3rem;
@@ -142,6 +167,18 @@ export default {
     font-family: "Courier New", monospace, sans-serif;
     font-size: 1.5rem;
     padding: 0 2rem;
+  }
+  table {
+    width: 100%;
+    border-top: 1px solid gainsboro;
+  }
+  tr {
+    border-bottom: 1px solid gainsboro;
+  }
+  .highlight {
+    background-color: gainsboro;
+    display: inline-block;
+    padding: 2rem;
   }
 }
 </style>
