@@ -7,3 +7,12 @@ $border-style: (
     dotted: dotted,
     dashed: dashed
 );
+
+$list-style: (
+    circle: circle,
+    disc: disc,
+    square: square,
+    decimal: decimal,
+    none: none,
+    'decimal-leading-zero': decimal-leading-zero
+);

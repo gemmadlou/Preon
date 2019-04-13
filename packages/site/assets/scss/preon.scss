@@ -25,6 +25,8 @@
 @include preonize("w",          width,              map-collect($scaled, $percentaged, $discrete),        $breakpoints);
 @include preonize("maxw",       max-width,          map-collect($discrete, $special-sizes, $percentaged), $breakpoints);
 @include preonize("minw",       min-width,          map-collect($discrete, $special-sizes, $percentaged), $breakpoints);
+@include preonize("maxh",       max-height,          map-collect($discrete, $special-sizes, $percentaged), $breakpoints);
+@include preonize("minh",       min-height,          map-collect($discrete, $special-sizes, $percentaged), $breakpoints);
 
 @include preonize-before("before-w",          width,              map-collect($scaled, $percentaged, $discrete),        $breakpoints);
 @include preonize-before("before-h",          height,             map-collect($scaled, $percentaged, $discrete),        $breakpoints);
@@ -32,10 +34,10 @@
 @include preonize-after("after-w",          width,              map-collect($scaled, $percentaged, $discrete),        $breakpoints);
 @include preonize-after("after-h",          height,             map-collect($scaled, $percentaged, $discrete),        $breakpoints);
 
-@include preonize("t",          top,                map-collect($scaled, $percentaged, $discrete),        $breakpoints);
-@include preonize("b",          bottom,             map-collect($scaled, $percentaged, $discrete),        $breakpoints);
-@include preonize("l",          left,               map-collect($scaled, $percentaged, $discrete),        $breakpoints);
-@include preonize("r",          right,              map-collect($scaled, $percentaged, $discrete),        $breakpoints);
+@include preonize("t",          top,                map-collect($scaled, $negative-scaled, $percentaged, $discrete),        $breakpoints);
+@include preonize("b",          bottom,             map-collect($scaled, $negative-scaled, $percentaged, $discrete),        $breakpoints);
+@include preonize("l",          left,               map-collect($scaled, $negative-scaled, $percentaged, $discrete),        $breakpoints);
+@include preonize("r",          right,              map-collect($scaled, $negative-scaled, $percentaged, $discrete),        $breakpoints);
 
 @include preonize("pa",         padding,            $scaled,        $breakpoints);
 @include preonize("pl",         padding-left,       map-collect($scaled, $discrete),        $breakpoints);
@@ -44,10 +46,10 @@
 @include preonize("pb",         padding-bottom,     map-collect($scaled, $discrete),        $breakpoints);
 
 @include preonize("ma",         margin,            map-collect($scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
-@include preonize("ml",         margin-left,       map-collect($scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
-@include preonize("mr",         margin-right,      map-collect($scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
-@include preonize("mt",         margin-top,        map-collect($scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
-@include preonize("mb",         margin-bottom,     map-collect($scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
+@include preonize("ml",         margin-left,       map-collect($scaled, $negative-scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
+@include preonize("mr",         margin-right,      map-collect($scaled, $negative-scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
+@include preonize("mt",         margin-top,        map-collect($scaled, $negative-scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
+@include preonize("mb",         margin-bottom,     map-collect($scaled, $negative-scaled, $special-sizes, $percentaged, $discrete),        $breakpoints);
 
 @include preonize("bda",        border-radius,           map-collect($limited-percentage, $scaledsmall),   $breakpoints);
 
@@ -68,6 +70,8 @@
 @include preonize("fs",         font-size,               $font-size,        $breakpoints);
 @include preonize("lh",         line-height,             $baselined,        $breakpoints);
 
+
+@include preonize("lst-",         list-style-type,             $list-style,        $breakpoints);
 
 @include preonize("d",                      display,                 $display,          $breakpoints);
 @include preonize-after("after-d",          display,                 $display,          $breakpoints);
