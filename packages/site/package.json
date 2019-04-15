@@ -4,6 +4,7 @@
   "description": "Functional css library",
   "author": "Gemma Black",
   "private": false,
+  "license": "GPLV2.1",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -39,5 +40,6 @@
     "sass-loader": "^7.1.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack-cli": "^3.1.2"
-  }
+  },
+  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec"
 }

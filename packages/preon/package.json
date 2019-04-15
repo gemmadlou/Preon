@@ -7,5 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "GPLV2.1"
+  "license": "GPLV2.1",
+  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec"
 }
