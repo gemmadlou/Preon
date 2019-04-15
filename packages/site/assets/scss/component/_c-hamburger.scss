@@ -1,39 +1,39 @@
-@import "../preon/config/color";
+@import "../../../../preon/config/color";
 
 .c-hamburger {
-    $this: &;
-    $hamburger-height: .3rem;
-    $hamburger-width: 2.5rem;
-    $hamburger-gap: .5rem;
+  $this: &;
+  $hamburger-height: .3rem;
+  $hamburger-width: 2.5rem;
+  $hamburger-gap: .5rem;
 
-    cursor: pointer;
-    width: $hamburger-width;
+  cursor: pointer;
+  width: $hamburger-width;
 
-    &__line {
-        background-color: map-get($colors, 'blue');
-        display: block;
-        height: $hamburger-height;
-        width: 100%;
+  &__line {
+    background-color: map-get($colors, 'blue');
+    display: block;
+    height: $hamburger-height;
+    width: 100%;
+  }
+
+  &__line+&__line {
+    margin-top: $hamburger-gap;
+  }
+
+  &--open {
+    #{$this}__line:nth-child(1) {
+      transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
+      transform-origin: 50%;
     }
 
-    &__line + &__line {
-        margin-top: $hamburger-gap;
+    #{$this}__line:nth-child(2) {
+      opacity: 0;
     }
 
-    &--open {
-        #{$this}__line:nth-child(1) {
-            transform: rotate(-45deg) translate(-0.5rem, 0.5rem);
-            transform-origin: 50%;
-        }
 
-        #{$this}__line:nth-child(2) {
-            opacity: 0;
-        }
-
-
-        #{$this}__line:nth-child(3) {
-            transform: rotate(45deg) translate(-0.6rem, -0.7rem);
-            transform-origin: 50%;
-        }
+    #{$this}__line:nth-child(3) {
+      transform: rotate(45deg) translate(-0.6rem, -0.7rem);
+      transform-origin: 50%;
     }
+  }
 }
