@@ -8,5 +8,8 @@
   },
   "author": "",
   "license": "GPLV2.1",
-  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec"
+  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec",
+  "publicConfig": {
+    "access": "public"
+  }
 }

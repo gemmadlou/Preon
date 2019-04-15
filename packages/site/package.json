@@ -41,5 +41,8 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack-cli": "^3.1.2"
   },
-  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec"
+  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec",
+  "publicConfig": {
+    "access": "public"
+  }
 }

@@ -12,5 +12,8 @@
     "command-line-args": "^5.1.0",
     "glob": "^7.1.3"
   },
-  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec"
+  "gitHead": "1a7746448e55273810d52767c1adbc2c1ac897ec",
+  "publicConfig": {
+    "access": "public"
+  }
 }
