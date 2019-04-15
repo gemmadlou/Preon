@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Functional css library",
   "author": "Gemma Black",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
