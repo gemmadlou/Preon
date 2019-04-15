@@ -2,6 +2,7 @@
   "name": "@preons/main",
   "license": "GPLV2.1",
   "private": false,
+  "version": "0.0.1",
   "devDependencies": {
     "lerna": "^3.13.1"
   }
