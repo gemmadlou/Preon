@@ -1,5 +1,5 @@
 {
-  "name": "preon-cli",
+  "name": "@preons/cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "GPLV2.1",
   "dependencies": {
     "command-line-args": "^5.1.0",
     "glob": "^7.1.3"

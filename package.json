@@ -1,5 +1,5 @@
 {
-  "name": "preon",
+  "name": "@preons/main",
   "private": true,
   "devDependencies": {
     "lerna": "^3.13.1"

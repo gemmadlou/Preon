@@ -1,0 +1,11 @@
+{
+  "name": "@preons/preons",
+  "version": "1.0.0",
+  "description": "## Credits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPLV2.1"
+}
