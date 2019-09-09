@@ -1,0 +1,272 @@
+preon:
+  - label: bg-
+    css-property: background-color
+    rule: colors
+  - label: fill-
+    css-property: fill
+    rule: colors
+  - label: ""
+    css-property: color
+    rule: colors
+  - label: ""
+    css-property: position
+    rule: position
+  - label: h
+    css-property: height
+    rule:
+      - scaled
+      - percentaged
+      - discrete
+  - label: w
+    css-property: width
+    rule:
+      - scaled
+      - percentaged
+      - discrete
+  - label: maxw
+    css-property: max-width
+    rule:
+      - special-sizes
+      - percentaged
+      - discrete
+  - label: maxh
+    css-property: max-height
+    rule:
+      - special-sizes
+      - percentaged
+      - discrete
+  - label: minw
+    css-property: min-width
+    rule:
+      - special-sizes
+      - percentaged
+      - discrete
+  - label: minw
+    css-property: min-height
+    rule:
+      - special-sizes
+      - percentaged
+      - discrete
+  - label: before-w
+    css-property: width
+    function: preonize-before
+    rule:
+      - scaled
+      - percentaged
+      - discrete
+  - label: before-h
+    css-property: height
+    function: preonize-before
+    rule:
+      - scaled
+      - percentaged
+      - discrete
+  - label: after-w
+    css-property: width
+    function: preonize-after
+    rule:
+      - scaled
+      - percentaged
+      - discrete
+  - label: after-h
+    css-property: height
+    function: after-before
+    rule:
+      - scaled
+      - percentaged
+      - discrete
+  - label: t
+    css-property: top
+    rule:
+      - scaled
+      - negative-scaled
+      - percentaged
+      - discrete
+  - label: b
+    css-property: bottom
+    rule:
+      - scaled
+      - negative-scaled
+      - percentaged
+      - discrete
+  - label: l
+    css-property: left
+    rule:
+      - scaled
+      - negative-scaled
+      - percentaged
+      - discrete
+  - label: r
+    css-property: right
+    rule:
+      - scaled
+      - negative-scaled
+      - percentaged
+      - discrete
+  - label: pa
+    css-property: padding
+    rule: scaled
+  - label: pl
+    css-property: padding-left
+    rule:
+      - scaled
+      - discrete
+  - label: pr
+    css-property: padding-right
+    rule:
+      - scaled
+      - discrete
+  - label: pt
+    css-property: padding-top
+    rule:
+      - scaled
+      - discrete
+  - label: pb
+    css-property: padding-bottom
+    rule:
+      - scaled
+      - discrete
+  - label: ma
+    css-property: margin
+    rule:
+      - scaled
+      - special-sizes
+      - percentaged
+      - discrete
+  - label: ml
+    css-property: margin-left
+    rule:
+      - scaled
+      - special-sizes
+      - percentaged
+      - discrete
+      - negative-scaled
+  - label: mr
+    css-property: margin-right
+    rule:
+      - scaled
+      - special-sizes
+      - percentaged
+      - discrete
+      - negative-scaled
+  - label: mt
+    css-property: margin-top
+    rule:
+      - scaled
+      - special-sizes
+      - percentaged
+      - discrete
+      - negative-scaled
+  - label: mb
+    css-property: margin-bottom
+    rule:
+      - scaled
+      - special-sizes
+      - percentaged
+      - discrete
+      - negative-scaled
+  - label: boa
+    css-property: border-radius
+    rule:
+      - limited-percentage
+      - scaled-small
+  - label: bwa
+    css-property: border-width
+    rule:
+      - tiny
+  - label: bwl
+    css-property: border-left-width
+    rule:
+      - tiny
+  - label: bwb
+    css-property: border-right-width
+    rule:
+      - tiny
+  - label: bwt
+    css-property: border-top-width
+    rule:
+      - tiny
+  - label: bwb
+    css-property: border-bottom-width
+    rule:
+      - tiny
+  - label: bs-
+    css-property: border-style
+    rule:
+      - border-style
+  - label: bc-
+    css-property: border-color
+    rule:
+      - colors
+  - label: t
+    css-property: text-transform
+    rule:
+      - text
+  - label: align
+    css-property: text-align
+    rule:
+      - alignment
+  - label: fw
+    css-property: font-weight
+    rule:
+      - weight
+  - label: td
+    css-property: text-decoration
+    rule:
+      - decoration
+  - label: ls
+    css-property: letter-spacing
+    rule:
+      - letter-spacing
+  - label: fs
+    css-property: font-size
+    rule:
+      - font-size
+  - label: lh
+    css-property: line-height
+    rule:
+      - baselined
+  - label: lst-
+    css-property: list-style-type
+    rule:
+      - list-stype
+  - label: d
+    css-property: display
+    rule:
+      - display
+  - label: after-d
+    css-property: display
+    function: preonize-after
+    rule:
+      - display
+  - label: bwb
+    css-property: border-bottom-width
+    rule:
+      - tiny
+  - label: shadow
+    css-property: box-shadow
+    rule:
+      - shadow
+  - label: ff-
+    css-property: font-family
+    rule:
+      - font-family
+  - label: hover-color-
+    css-property: color
+    function: preonize-hover
+    rule:
+      - colors
+#   - label: bwb
+#     css-property: border-bottom-width
+#     rule:
+#       - tiny
+# @include preonize-hover("hover-color-", color, $colors, $breakpoints);
+# @include preonize-hover("bghover-color-", background-color, $colors, $breakpoints);
+
+# @include preonize("", overflow, $overflow, $breakpoints);
+# @include preonize("x-", overflow-x, $overflow, $breakpoints);
+# @include preonize("y-", overflow-y, $overflow, $breakpoints);
+
+# @include preonize("o", opacity, $decimal, $breakpoints);
+
+# @include preonize("z-", z-index, $numbers, $breakpoints);
