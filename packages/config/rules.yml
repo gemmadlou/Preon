@@ -1,5 +1,10 @@
 preons:
 
+  baseline: 1.2rem;
+
+
+  gutter: 2.5rem;
+
   # Base rules
   rules:  
     color:
@@ -97,8 +102,6 @@ preons:
       5: 2.5rem
       6: 3rem
 
-    baseline: 1.2rem;
-
     # For fonts especially
     baselined: 
       -small: 2rem
@@ -188,8 +191,6 @@ preons:
       3: 3
       4: 4
       5: 5
-
-    gutter: 2.5rem;
 
     text: 
       u: uppercase

@@ -10,12 +10,17 @@ const options = commandLineArgs([{
   },
   {
     name: 'src',
+    alias: 's',
     type: String,
-    multiple: false,
-    defaultOption: true
+    multiple: false
+  },
+  {
+    name: 'dist',
+    alias: 'd',
+    type: String,
+    multiple: false
   }
 ])
-const parse = require('./parser').parse
 
 let main = (async () => {
   try {
@@ -31,17 +36,26 @@ let main = (async () => {
 
     let breakpoints = `$breakpoints: (
       ${Object.entries(set.preons.breakpoints).map(([key, value]) => `"${key}": ${value}`).join(",\n")}
-    )`
+    );`
 
     let preons = set.preons.classes.map((rule) => {
       return `@include preonize("${rule.label}", ${rule['css-property']}, map-collect(${rule.rule.join(', ')}), $breakpoints);`
     }).join("\n")
 
+    let grid = fs.readFileSync(path.join(__dirname, '..', '..', 'preon', '_grid.scss'))
+
+    let preonize = fs.readFileSync(path.join(__dirname, '..', '..', 'preon', '_preonize.scss'))
+
     let formatted = prettier.format(`
       ${sassMaps}
       ${breakpoints}
+      ${grid}
+      ${preonize}
       ${preons}
     `, { semi: false, parser: "scss" });
+
+    let outfile = path.join(process.cwd(), ...options.dist.split('/'))
+    fs.writeFileSync(outfile, formatted, 'utf8')
 
     console.log(formatted)
   } catch (e) {
