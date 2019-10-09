@@ -1,5 +1,6 @@
 const path = require('path')
 const yaml = require('yaml')
+const prettier = require("prettier")
 const fs = require('fs')
 const commandLineArgs = require('command-line-args')
 const options = commandLineArgs([{
@@ -36,7 +37,13 @@ let main = (async () => {
       return `@include preonize("${rule.label}", ${rule['css-property']}, map-collect(${rule.rule.join(', ')}), $breakpoints);`
     }).join("\n")
 
-    console.log(preons)
+    let formatted = prettier.format(`
+      ${sassMaps}
+      ${breakpoints}
+      ${preons}
+    `, { semi: false, parser: "scss" });
+
+    console.log(formatted)
   } catch (e) {
     console.error(e)
   }

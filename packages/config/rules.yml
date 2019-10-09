@@ -12,7 +12,7 @@ preons:
       mustard: "#e0b700"
 
     shadow:
-      -large: "5px 11px 24px 2px rgba0 0 0 0.23)"
+      -large: "5px 11px 24px 2px rgba(0 0 0 0.23)"
 
     border-style:
       solid: solid
@@ -146,11 +146,11 @@ preons:
       -90: 90%
       -95: 95%
       -100: 100%
-      -third: 100% / 3)
-      -two-thirds: 100% / 3 * 2)
-      -1-12: 100% / 12)
-      -2-12: 100% / 12)
-      -3-12: 100% / 12)
+      -third: "(100% / 3)"
+      -two-thirds: "(100% / 3 * 2)"
+      -1-12: "(100% / 12)"
+      -2-12: "(100% / 12)"
+      -3-12: "(100% / 12)"
 
     special-sizes: 
       x: none
