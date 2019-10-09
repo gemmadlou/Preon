@@ -1,3 +1,6 @@
+const path = require('path')
+const yaml = require('yaml')
+const fs = require('fs')
 const commandLineArgs = require('command-line-args')
 const options = commandLineArgs([{
     name: 'verbose',
@@ -7,28 +10,33 @@ const options = commandLineArgs([{
   {
     name: 'src',
     type: String,
-    multiple: true,
+    multiple: false,
     defaultOption: true
   }
 ])
-const fs = require('fs')
 const parse = require('./parser').parse
 
 let main = (async () => {
   try {
-    let data = options.src.map(item => fs.readFileSync(item, {
-        encoding: 'utf8'
-      }))
-      .join('')
-      .replace(/\s+/g, '')
-      .match(/(\$[a-z-]+:\s?\([a-z-:0-9,.#']+\);)/g)
-      .reduce((a, b) => {
-        let parsed = b.match(/^\$[a-z-0-9]+:\(/g, '')[0].replace(/(\$|:|\()/g, '')
-        let values = parse(b, '')
-        a[`${parsed}`] = values
-        return a
-      }, {})
-    console.log(data)
+    let file = path.join(process.cwd(), ...options.src.split('/'))
+    let contents = fs.readFileSync(file, 'utf8')
+    let set = yaml.parse(contents)
+
+    let sassMaps = Object.entries(set.preons.rules).map(([key, values]) => {
+      return `$${key}: (
+      ${Object.entries(values).map(([key, value]) => `"${key}": ${value}`).join(",\n")}
+      );`
+    }).join("\n")
+
+    let breakpoints = `$breakpoints: (
+      ${Object.entries(set.preons.breakpoints).map(([key, value]) => `"${key}": ${value}`).join(",\n")}
+    )`
+
+    let preons = set.preons.classes.map((rule) => {
+      return `@include preonize("${rule.label}", ${rule['css-property']}, map-collect(${rule.rule.join(', ')}), $breakpoints);`
+    }).join("\n")
+
+    console.log(preons)
   } catch (e) {
     console.error(e)
   }
