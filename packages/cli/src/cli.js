@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const path = require('path')
 const yaml = require('yaml')
 const prettier = require("prettier")
@@ -39,14 +41,20 @@ let main = (async () => {
     );`
 
     let preons = set.preons.classes.map((rule) => {
-      return `@include preonize("${rule.label}", ${rule['css-property']}, map-collect(${rule.rule.join(', ')}), $breakpoints);`
+      return `@include preonize("${rule.label}", ${rule['css-property']}, map-collect(${rule.rule.map(i => `$${i}`).join(', ')}), $breakpoints);`
     }).join("\n")
 
     let grid = fs.readFileSync(path.join(__dirname, '..', '..', 'preon', '_grid.scss'))
 
     let preonize = fs.readFileSync(path.join(__dirname, '..', '..', 'preon', '_preonize.scss'))
 
+    let baseline = `$baseline: ${set.preons.baseline}`
+
+    let gutter = `$gutter: ${set.preons.gutter}`
+
     let formatted = prettier.format(`
+      ${baseline}
+      ${gutter}
       ${sassMaps}
       ${breakpoints}
       ${grid}

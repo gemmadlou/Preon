@@ -30,6 +30,7 @@
     .justify-center#{$suffix} { justify-content: center }
     .justify-between#{$suffix} { justify-content: space-between }
     .justify-around#{$suffix} { justify-content: space-around }
+    .justify-stretch#{$suffix} { justify-content: stretch }
 
     .content-start#{$suffix} { align-content: flex-start }
     .content-end#{$suffix} { align-content: flex-end }
@@ -40,6 +41,10 @@
 
     .flex-min#{$suffix} { min-height: 0; min-width: 0 }
     .flex-max#{$suffix} { max-height: 100%; max-width: 100% }
+
+    .grow-0#{$suffix} { flex-grow: 0 }
+
+    .shrink-0#{$suffix} { flex-shrink: 0 }
 
     .basis-0#{$suffix} { flex-basis: 0% }
     .basis-1#{$suffix} { flex-basis: 8.333333333% }
