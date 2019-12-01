@@ -27,12 +27,14 @@ const options = commandLineArgs([{
 let main = (async () => {
   try {
 
-    if (!options.src && !options.dist) {
+    if (!options.dist) {
       console.log('   preon --src <RULE_FILE> --dist <SCSS_FILE>')
       return;
     }
 
-    let file = path.join(process.cwd(), ...options.src.split('/'))
+    let defaultFile = path.join(__dirname, '..', '..', 'config', 'rules.yml')
+
+    let file = options.src ? path.join(process.cwd(), ...options.src.split('/')) : defaultFile
     let contents = fs.readFileSync(file, 'utf8')
     let set = yaml.parse(contents)
 
@@ -70,8 +72,6 @@ let main = (async () => {
 
     let outfile = path.join(process.cwd(), ...options.dist.split('/'))
     fs.writeFileSync(outfile, formatted, 'utf8')
-
-    console.log(formatted)
   } catch (e) {
     console.error(e)
   }

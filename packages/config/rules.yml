@@ -4,20 +4,22 @@ preons:
 
   gutter: 2.5rem;
 
-  # Base rules
   rules:  
     color:
       black: "#282828"
-      blue: "#365e86"
+      pink: "#e23b88"
+      blue: "#21304f"
       white: "#ffffff"
       grey: "#f1f5f1"
       grey-dark: "#89969d"
       transparent: "transparent"
       red: "#ff206b"
-      mustard: "#e0b700"
+      mustard: "#fbcf00"
 
     shadow:
       -large: "5px 11px 24px 2px rgba(0, 0, 0, 0.23)"
+      -black-left: -4px 0px 10px -6px black
+      -black-top: 0px -4px 10px -6px black
 
     border-style:
       solid: solid
@@ -41,10 +43,19 @@ preons:
       if: inline-flex
       n: none
 
+    cursor:
+      pointer: pointer
+      help: help
+      wait: wait
+      crosshair: crosshair
+      not-allowed: not-allowed
+      zoom-in: zoom-in
+      grab: grab
 
     font-family: 
       heebo: "#{heebo sans-serif}"
-
+      poppins: "#{Poppins, sans-serif}"
+      vietnam: "#{'Be Vietnam', sans-serif}"
 
     overflow: 
       scroll: scroll
@@ -104,6 +115,7 @@ preons:
 
     # For fonts especially
     baselined: 
+      -xsmall: 1.6rem
       -small: 2rem
       1: $baseline * 2
       2: $baseline * 2.5
@@ -149,6 +161,7 @@ preons:
       -90: 90%
       -95: 95%
       -100: 100%
+      -125: 125%
       -third: "(100% / 3)"
       -two-thirds: "(100% / 3 * 2)"
       -1-12: "(100% / 12)"
@@ -173,7 +186,8 @@ preons:
     discrete: 
       -wire : 1px
       -thin : 3px
-      -xxsmall : 5px
+      -xxxsmall : 5px
+      -xxsmall : 7px
       -xsmall : 1rem
       -small : 1.6rem
       -icon : 3.2rem
@@ -186,6 +200,17 @@ preons:
       -xsuper : 52rem
       -xxsuper : 62rem
       -xxxsuper : 72rem
+
+    
+
+    negative-discrete:
+      -nxbig : -16rem
+      -nxxbig : -22rem
+      -nxxxbig : -32rem
+      -nsuper : -42rem
+      -nxsuper : -52rem
+      -nxxsuper : -62rem
+      -nxxxsuper : -72rem
 
     numbers: 
       1: 1
@@ -232,16 +257,47 @@ preons:
       9: 6.4rem
       10: 7.6rem
 
+    font-scale:
+      msmaller: 0.750em
+      smaller: 0.875em
+      bigger: 1.125em
+      mbigger: 1.25em
+      mmbigger: 1.5em
+      double: 2em
+      triple: 3em
+
     image-fill:
       fill: fill
       cover: cover
       contain: contain
       none: none
+
+    float:
+      l: left
+      r: right
+      n: none
+
+    clear:
+      both: both
+
+    transforms:
+      translate-x50n: translate(-50%)
+      performance: translate3d(0,0,0)
+
+    box-sizing:
+      b: border-box
+      c: content-box
+      
+    animation-iteration-count:
+      infinite: infinite
+
+    will-change:
+      transform: transform
       
   # Preon breakpoints
   breakpoints:
     m: "only screen and (min-width: 768px)"
-    l: "only screen and (min-width: 960px)"
+    l: "only screen and (min-width: 1024px)"
 
   # Preon classes
   classes:
@@ -267,12 +323,14 @@ preons:
         - scaled
         - percentaged
         - discrete
+        - special-sizes
     - label: w
       css-property: width
       rule:
         - scaled
         - percentaged
         - discrete
+        - special-sizes
     - label: maxw
       css-property: max-width
       rule:
@@ -357,6 +415,7 @@ preons:
       css-property: padding
       rule: 
         - scaled
+        - discrete
     - label: pl
       css-property: padding-left
       rule:
@@ -408,6 +467,7 @@ preons:
         - percentaged
         - discrete
         - negative-scaled
+        - negative-discrete
     - label: mb
       css-property: margin-bottom
       rule:
@@ -416,6 +476,7 @@ preons:
         - percentaged
         - discrete
         - negative-scaled
+        - negative-discrete
     - label: boa
       css-property: border-radius
       rule:
@@ -473,6 +534,10 @@ preons:
       css-property: font-size
       rule:
         - font-size
+    - label: fs-
+      css-property: font-size
+      rule:
+        - font-scale
     - label: lh
       css-property: line-height
       rule:
@@ -539,3 +604,32 @@ preons:
       css-property: object-fit
       rule:
         - image-fill
+    - label: "f"
+      css-property: float
+      rule:
+        - float
+    - label: "clear-"
+      css-property: clear
+      rule:
+        - clear
+    - label: "tf-"
+      css-property: transform
+      rule:
+        - transforms
+    - label: "box"
+      css-property: box-sizing
+      rule:
+        - box-sizing
+    - label: ""
+      css-property: cursor
+      rule:
+        - cursor
+    - label: iterate-
+      css-property: animation-iteration-count
+      rule:
+        - animation-iteration-count
+        - numbers
+    - label: will-change-
+      css-property: will-change
+      rule:
+        - will-change
