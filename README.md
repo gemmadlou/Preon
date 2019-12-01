@@ -2,7 +2,7 @@
 
 <img src="./packages/docs/images/preon.jpg" width="100%" />
 
-Preons was created after stumbling across functional css and [Tachyons](https://tachyons.io/). Preons is based however on a rules.yml that you can define for your project to generate your Sass Preons.
+Preons is a functional css library and generator, inspired by [Tachyons](https://tachyons.io/).
 
 ## Quick Start
 
@@ -36,6 +36,8 @@ preons:
   breakpoints:
     #
 ```
+
+> Check out the default [rules.yml](packages/config/rules.yml)
 
 ### Rules
 
@@ -91,13 +93,13 @@ breakpoints:
 
 Under the hood, the preonize function takes a map of rules, for each breakpoint, then generates css for a particular css style.
 
-```sh
+```scss
 @include preonize("h", height, $scaled, $breakpoints);
 ```
 
 An example would be:
 
-```
+```css
 .h1 { height: 1rem }
 .h2 { height: 2rem }
 
